@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuoco - Igniting Musical Talent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff4e00 0%, #f9d423 100%);
+        }
+        
+        .flame-animation {
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+        
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .music-player {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: #ff4e00;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-fire text-3xl text-orange-500 flame-animation mr-2"></i>
+                        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">FUOCO</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-white hover:text-orange-400 transition duration-300">Home</a>
+                    <a href="#artists" class="text-white hover:text-orange-400 transition duration-300">Artists</a>
+                    <a href="#releases" class="text-white hover:text-orange-400 transition duration-300">Releases</a>
+                    <a href="#services" class="text-white hover:text-orange-400 transition duration-300">Services</a>
+                    <a href="#contact" class="text-white hover:text-orange-400 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-white hover:text-orange-400 transition duration-300">Home</a>
+                <a href="#artists" class="block py-2 text-white hover:text-orange-400 transition duration-300">Artists</a>
+                <a href="#releases" class="block py-2 text-white hover:text-orange-400 transition duration-300">Releases</a>
+                <a href="#services" class="block py-2 text-white hover:text-orange-400 transition duration-300">Services</a>
+                <a href="#contact" class="block py-2 text-white hover:text-orange-400 transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-800">IGNITE YOUR</span>
+                        <br>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">MUSICAL JOURNEY</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-800 font-medium">
+                        Fuoco Records - Where raw talent meets professional production. We fuel the fire of creativity.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-900 transition duration-300 text-center">
+                            JOIN OUR LABEL
+                        </a>
+                        <a href="#releases" class="border-2 border-black text-black px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition duration-300 text-center">
+                            LATEST RELEASES
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-orange-500 rounded-3xl opacity-20 blur-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Music Producer" 
+                             class="relative rounded-2xl shadow-2xl w-full max-w-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-orange-500 rounded-3xl opacity-20 blur-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Concert Crowd" 
+                             class="relative rounded-2xl shadow-2xl w-full">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-16">
+                    <h2 class="text-4xl font-bold mb-6">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">OUR STORY</span>
+                    </h2>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Founded in 2015, Fuoco Records began as a small collective of passionate music producers and artists. Today, we've grown into a full-service record label dedicated to discovering and nurturing exceptional talent across multiple genres.
+                    </p>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        The name "Fuoco" (Italian for "fire") represents our burning passion for music and our commitment to igniting the careers of talented artists. We provide the resources, guidance, and platform needed to turn raw talent into professional success.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-gray-800 bg-opacity-50 px-6 py-4 rounded-lg">
+                            <h3 class="text-orange-400 font-bold text-xl mb-2">50+</h3>
+                            <p class="text-gray-300">Artists Signed</p>
+                        </div>
+                        <div class="bg-gray-800 bg-opacity-50 px-6 py-4 rounded-lg">
+                            <h3 class="text-orange-400 font-bold text-xl mb-2">500M+</h3>
+                            <p class="text-gray-300">Streams Worldwide</p>
+                        </div>
+                        <div class="bg-gray-800 bg-opacity-50 px-6 py-4 rounded-lg">
+                            <h3 class="text-orange-400 font-bold text-xl mb-2">100+</h3>
+                            <p class="text-gray-300">Releases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">OUR ARTISTS</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Discover the talented artists who make Fuoco Records special. Each with a unique sound and story.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artist 1 -->
+                <div class="artist-card bg-gray-900 rounded-xl overflow-hidden transition duration-500 ease-in-out">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                             alt="Artist 1" 
+                             class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">DJ INFERNO</h3>
+                            <p class="text-orange-400">Electronic / House</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">
+                            Blazing through the electronic scene with his signature fiery beats that set dance floors ablaze.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-spotify text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-soundcloud text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artist 2 -->
+                <div class="artist-card bg-gray-900 rounded-xl overflow-hidden transition duration-500 ease-in-out">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Artist 2" 
+                             class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">LYRIC FLAME</h3>
+                            <p class="text-orange-400">Hip-Hop / R&B</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">
+                            Spitting fire with every verse, this wordsmith brings heat to the mic with soulful flows and scorching lyrics.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-spotify text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-youtube text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artist 3 -->
+                <div class="artist-card bg-gray-900 rounded-xl overflow-hidden transition duration-500 ease-in-out">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Artist 3" 
+                             class="w-full h-80 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">SOLAR BEATS</h3>
+                            <p class="text-orange-400">Chillwave / Lo-fi</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">
+                            Crafting warm, sun-drenched beats that provide the perfect soundtrack for relaxation and creative flow.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-spotify text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                                <i class="fab fa-apple text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-block border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition duration-300">
+                    VIEW ALL ARTISTS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Releases Section -->
+    <section id="releases" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">LATEST RELEASES</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Fresh tracks from the Fuoco family. Stream now on all platforms.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Release 1 -->
+                <div class="bg-black bg-opacity-50 rounded-xl overflow-hidden transition duration-500 ease-in-out hover:bg-opacity-70">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Release 1" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 right-4 bg-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">BLAZE UP</h3>
+                        <p class="text-orange-400 mb-4">DJ INFERNO</p>
+                        <p class="text-gray-400 mb-6">
+                            The hottest track of the summer with explosive drops and fiery basslines.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="text-gray-400 text-sm">June 15, 2023</span>
+                            </div>
+                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+                                <i class="fas fa-play-circle text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Release 2 -->
+                <div class="bg-black bg-opacity-50 rounded-xl overflow-hidden transition duration-500 ease-in-out hover:bg-opacity-70">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1413&q=80" 
+                             alt="Release 2" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">HEAT WAVE</h3>
+                        <p class="text-orange-400 mb-4">LYRIC FLAME ft. SOLAR BEATS</p>
+                        <p class="text-gray-400 mb-6">
+                            A genre-blending collaboration that merges fiery rap verses with chilled-out production.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="text-gray-400 text-sm">May 28, 2023</span>
+                            </div>
+                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+                                <i class="fas fa-play-circle text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Release 3 -->
+                <div class="bg-black bg-opacity-50 rounded-xl overflow-hidden transition duration-500 ease-in-out hover:bg-opacity-70">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Release 3" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AFTERGLOW</h3>
+                        <p class="text-orange-400 mb-4">SOLAR BEATS</p>
+                        <p class="text-gray-400 mb-6">
+                            A soothing instrumental journey perfect for late nights and early mornings.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="text-gray-400 text-sm">April 10, 2023</span>
+                            </div>
+                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+                                <i class="fas fa-play-circle text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-block border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition duration-300">
+                    VIEW ALL RELEASES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player -->
+    <div class="music-player fixed bottom-0 left-0 right-0 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg z-40 p-4 hidden">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 w-1/4">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Album Cover" 
+                         class="w-12 h-12 rounded">
+                    <div>
+                        <p class="text-white font-medium">BLAZE UP</p>
+                        <p class="text-orange-400 text-sm">DJ INFERNO</p>
+                    </div>
+                </div>
+                
+                <div class="w-2/4">
+                    <div class="flex items-center justify-center space-x-6">
+                        <button class="text-gray-400 hover:text-white">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button id="play-btn" class="bg-orange-500 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-orange-600">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="text-gray-400 hover:text-white">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                    <div class="mt-2 flex items-center space-x-3">
+                        <span class="text-xs text-gray-400">1:45</span>
+                        <div class="progress-bar w-full rounded-full">
+                            <div class="progress rounded-full"></div>
+                        </div>
+                        <span class="text-xs text-gray-400">3:22</span>
+                    </div>
+                </div>
+                
+                <div class="w-1/4 flex justify-end items-center space-x-4">
+                    <button class="text-gray-400 hover:text-white">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">OUR SERVICES</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    We provide comprehensive support to help artists at every stage of their career.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-record-vinyl text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Record Production</h3>
+                    <p class="text-gray-400">
+                        From demo to master, our in-house producers and engineers will help you create professional-quality recordings.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Marketing & Promotion</h3>
+                    <p class="text-gray-400">
+                        Strategic campaigns to get your music heard by the right audiences across all platforms and media.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-guitar text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Artist Development</h3>
+                    <p class="text-gray-400">
+                        Personalized coaching and mentorship to help you grow as an artist and build a sustainable career.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Distribution</h3>
+                    <p class="text-gray-400">
+                        Worldwide digital distribution to all major platforms including Spotify, Apple Music, and more.
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Booking & Touring</h3>
+                    <p class="text-gray-400">
+                        Access to our network of venues and promoters to help you perform live and connect with fans.
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-900 rounded-xl p-8 transition duration-500 ease-in-out hover:bg-gray-800">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-money-bill-wave text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Royalty Management</h3>
+                    <p class="text-gray-400">
+                        Transparent accounting and collection of all royalties owed to you from streaming, syncs, and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 hero-gradient">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-800">GET IN TOUCH</span>
+                    </h2>
+                    <p class="text-xl text-gray-800 font-medium">
+                        Ready to ignite your music career? Submit your demo or inquire about our services.
+                    </p>
+                </div>
+                
+                <form class="bg-black bg-opacity-70 rounded-xl p-8 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <select id="subject" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Select an option</option>
+                                <option value="demo">Demo Submission</option>
+                                <option value="services">Services Inquiry</option>
+                                <option value="collab">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="genre" class="block text-gray-300 mb-2">Music Genre</label>
+                            <input type="text" id="genre" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="message" class="block text-gray-300 mb-2">Your Message</label>
+                        <textarea id="message" rows="5" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                    </div>
+                    <div class="mt-6">
+                        <label for="demo" class="block text-gray-300 mb-2">Upload Demo (MP3, WAV)</label>
+                        <input type="file" id="demo" accept="audio/*" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-orange-500 text-black font-bold py-4 px-6 rounded-lg hover:bg-orange-600 transition duration-300">
+                            SEND MESSAGE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-fire text-3xl text-orange-500 flame-animation mr-2"></i>
+                        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">FUOCO</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Igniting musical talent since 2015. We're passionate about discovering and developing exceptional artists.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6">QUICK LINKS</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-400 transition duration-300">Home</a></li>
+                        <li><a href="#artists" class="text-gray-400 hover:text-orange-400 transition duration-300">Artists</a></li>
+                        <li><a href="#releases" class="text-gray-400 hover:text-orange-400 transition duration-300">Releases</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-orange-400 transition duration-300">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-orange-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6">SERVICES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">Record Production</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">Artist Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">Distribution</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">Booking</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6">CONTACT INFO</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Music Avenue, Los Angeles, CA 90028</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-orange-400 mr-3"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-orange-400 mr-3"></i>
+                            <span class="text-gray-400">info@fuocorecords.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">
+                    &copy; 2023 Fuoco Records. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-orange-400 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-orange-400 transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-orange-400 transition duration-300">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Music player functionality
+        const musicPlayer = document.querySelector('.music-player');
+        const playBtn = document.getElementById('play-btn');
+        const progressBar = document.querySelector('.progress');
+        let isPlaying = false;
+        let progress = 0;
+        let progressInterval;
+        
+        // Show music player when play button is clicked on any release
+        document.querySelectorAll('.fa-play-circle').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                musicPlayer.classList.remove('hidden');
+                
+                // Reset progress
+                progress = 0;
+                progressBar.style.width = '0%';
+                
+                // Start progress simulation
+                if (progressInterval) clearInterval(progressInterval);
+                progressInterval = setInterval(() => {
+                    if (progress < 100) {
+                        progress += 0.5;
+                        progressBar.style.width = `${progress}%`;
+                    } else {
+                        clearInterval(progressInterval);
+                    }
+                }, 1000);
+            });
+        });
+        
+        // Play/pause functionality
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            
+            if (isPlaying) {
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                
+                // Start progress simulation if not already running
+                if (!progressInterval) {
+                    progressInterval = setInterval(() => {
+                        if (progress < 100) {
+                            progress += 0.5;
+                            progressBar.style.width = `${progress}%`;
+                        } else {
+                            clearInterval(progressInterval);
+                        }
+                    }, 1000);
+                }
+            } else {
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                clearInterval(progressInterval);
+                progressInterval = null;
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
