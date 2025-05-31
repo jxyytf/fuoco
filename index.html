@@ -5,55 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuoco - Igniting Musical Talent</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #ff4e00 0%, #f9d423 100%);
-        }
-        
-        .flame-animation {
-            animation: flicker 3s infinite alternate;
-        }
-        
-        @keyframes flicker {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.05);
-            }
-        }
-        
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .music-player {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
-        }
-        
-        .progress-bar {
-            height: 4px;
-            background-color: rgba(255,255,255,0.2);
-        }
-        
-        .progress {
-            height: 100%;
-            background-color: #ff4e00;
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-    </style>
 </head>
 <body class="bg-black text-white">
     <!-- Navigation -->
@@ -211,7 +164,7 @@
                 <!-- Artist 2 -->
                 <div class="artist-card bg-gray-900 rounded-xl overflow-hidden transition duration-500 ease-in-out">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                        <img src="https://i.pinimg.com/736x/a7/24/2f/a7242f240dfbb4cd7dab1173cdd9b847.jpg" 
                              alt="Artist 2" 
                              class="w-full h-80 object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
@@ -241,18 +194,18 @@
                 <!-- Artist 3 -->
                 <div class="artist-card bg-gray-900 rounded-xl overflow-hidden transition duration-500 ease-in-out">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                        <img src="https://i.pinimg.com/736x/f7/b6/fd/f7b6fd6fa9ad8967efce68adb8914e90.jpg" 
                              alt="Artist 3" 
                              class="w-full h-80 object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
                         <div class="absolute bottom-4 left-4">
-                            <h3 class="text-2xl font-bold text-white">???</h3>
-                            <p class="text-orange-400">Chillwave / Lo-fi</p>
+                            <h3 class="text-2xl font-bold text-white">numb the pain</h3>
+                            <p class="text-orange-400">Core-Core, Ambient</p>
                         </div>
                     </div>
                     <div class="p-6">
                         <p class="text-gray-400 mb-4">
-                            ???
+                            With heart-hitting Core-Core, numb the pain has seen a great success in his fiery music career
                         </p>
                         <div class="flex space-x-4">
                             <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
@@ -311,7 +264,7 @@
                             <div class="flex space-x-2">
                                 <span class="text-gray-400 text-sm">May 25th, 2025</span>
                             </div>
-                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+ <a href="#" class="play-button text-orange-400 hover:text-orange-300 transition duration-300" data-audio-id="friends-audio">
                                 <i class="fas fa-play-circle text-3xl"></i>
                             </a>
                         </div>
@@ -319,6 +272,7 @@
                 </div>
                 
                 <!-- Release 2 -->
+ <audio id="friends-audio" src="audio/friends.mp3"></audio>
                 <div class="bg-black bg-opacity-50 rounded-xl overflow-hidden transition duration-500 ease-in-out hover:bg-opacity-70">
                     <div class="relative">
                         <img src="https://images.pexels.com/photos/32197890/pexels-photo-32197890/free-photo-of-dramatic-cloudy-sky-over-dark-forest-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
@@ -336,7 +290,7 @@
                             <div class="flex space-x-2">
                                 <span class="text-gray-400 text-sm">November 26th, 2024</span>
                             </div>
-                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+ <a href="#" class="play-button text-orange-400 hover:text-orange-300 transition duration-300" data-audio-id="amore-audio">
                                 <i class="fas fa-play-circle text-3xl"></i>
                             </a>
                         </div>
@@ -344,6 +298,7 @@
                 </div>
                 
                 <!-- Release 3 -->
+ <audio id="amore-audio" src="audio/amore_mio_aiutami.mp3"></audio>
                 <div class="bg-black bg-opacity-50 rounded-xl overflow-hidden transition duration-500 ease-in-out hover:bg-opacity-70">
                     <div class="relative">
                         <img src="https://i.pinimg.com/736x/11/d3/29/11d3292f0f6d288407369ae2204603a9.jpg" 
@@ -361,7 +316,8 @@
                             <div class="flex space-x-2">
                                 <span class="text-gray-400 text-sm">November 24th, 2024</span>
                             </div>
-                            <a href="#" class="text-orange-400 hover:text-orange-300 transition duration-300">
+                            <a href="#" class="play-button text-orange-400 hover:text-orange-300 transition duration-300" data-audio-id="arthur-audio">
+ 
                                 <i class="fas fa-play-circle text-3xl"></i>
                             </a>
                         </div>
@@ -369,8 +325,9 @@
                 </div>
             </div>
             
+ <audio id="arthur-audio" src="audio/arthur_oh_arthur.mp3"></audio>
             <div class="text-center mt-16">
-                <a href="#" class="inline-block border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition duration-300">
+                <a href="https://open.spotify.com/playlist/3arrho3HfURgTSpDK453N5?si=a542accb681a479c" class="inline-block border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition duration-300">
                     VIEW ALL RELEASES
                 </a>
             </div>
@@ -404,11 +361,11 @@
                         </button>
                     </div>
                     <div class="mt-2 flex items-center space-x-3">
-                        <span class="text-xs text-gray-400">1:45</span>
+                        <span class="text-xs text-gray-400 current-time">0:00</span>
                         <div class="progress-bar w-full rounded-full">
                             <div class="progress rounded-full"></div>
                         </div>
-                        <span class="text-xs text-gray-400">3:22</span>
+                        <span class="text-xs text-gray-400 total-duration">0:00</span>
                     </div>
                 </div>
                 
@@ -521,46 +478,8 @@
                         Ready to ignite your music career? Submit your demo or inquire about our services.
                     </p>
                 </div>
-                
-                <form class="bg-black bg-opacity-70 rounded-xl p-8 shadow-2xl">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
-                            <select id="subject" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                                <option value="">Select an option</option>
-                                <option value="demo">Demo Submission</option>
-                                <option value="services">Services Inquiry</option>
-                                <option value="collab">Collaboration</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="genre" class="block text-gray-300 mb-2">Music Genre</label>
-                            <input type="text" id="genre" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <label for="message" class="block text-gray-300 mb-2">Your Message</label>
-                        <textarea id="message" rows="5" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-                    </div>
-                    <div class="mt-6">
-                        <label for="demo" class="block text-gray-300 mb-2">Upload Demo (MP3, WAV)</label>
-                        <input type="file" id="demo" accept="audio/*" class="w-full bg-gray-800 bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                    </div>
-                    <div class="mt-8">
-                        <button type="submit" class="w-full bg-orange-500 text-black font-bold py-4 px-6 rounded-lg hover:bg-orange-600 transition duration-300">
-                            SEND MESSAGE
-                        </button>
-                    </div>
-                </form>
+
+                <p class="text-center text-xl text-gray-800 font-medium">Email us at <a href="mailto:info@fuoco.me" class="text-white hover:underline">info@fuoco.me</a></p>
             </div>
         </div>
     </section>
@@ -578,19 +497,13 @@
                         Igniting musical talent since 2025. We're passionate about discovering and developing exceptional artists.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
- <i class="fab fa-instagram"></i></a>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                        <a href="https://instagram.com/fuoco.me" class="text-gray-400 hover:text-orange-400 transition duration-300" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                        <a href="https://x.com/FuocoRecords" class="text-gray-400 hover:text-orange-400 transition duration-300">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition duration-300">
+                        <a href="https://open.spotify.com/playlist/3arrho3HfURgTSpDK453N5?si=5f548e6818064d60" class="text-gray-400 hover:text-orange-400 transition duration-300">
                             <i class="fab fa-spotify"></i>
                         </a>
                     </div>
@@ -631,93 +544,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Music player functionality
-        const musicPlayer = document.querySelector('.music-player');
-        const playBtn = document.getElementById('play-btn');
-        const progressBar = document.querySelector('.progress');
-        let isPlaying = false;
-        let progress = 0;
-        let progressInterval;
-        
-        // Show music player when play button is clicked on any release
-        document.querySelectorAll('.fa-play-circle').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                musicPlayer.classList.remove('hidden');
-                
-                // Reset progress
-                progress = 0;
-                progressBar.style.width = '0%';
-                
-                // Start progress simulation
-                if (progressInterval) clearInterval(progressInterval);
-                progressInterval = setInterval(() => {
-                    if (progress < 100) {
-                        progress += 0.5;
-                        progressBar.style.width = `${progress}%`;
-                    } else {
-                        clearInterval(progressInterval);
-                    }
-                }, 1000);
-            });
-        });
-        
-        // Play/pause functionality
-        playBtn.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            
-            if (isPlaying) {
-                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                
-                // Start progress simulation if not already running
-                if (!progressInterval) {
-                    progressInterval = setInterval(() => {
-                        if (progress < 100) {
-                            progress += 0.5;
-                            progressBar.style.width = `${progress}%`;
-                        } else {
-                            clearInterval(progressInterval);
-                        }
-                    }, 1000);
-                }
-            } else {
-                playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                clearInterval(progressInterval);
-                progressInterval = null;
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
